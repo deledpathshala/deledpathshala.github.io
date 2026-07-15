@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://duaimtiyaz14.github.io/deled-pathshala/sitemap.xml
