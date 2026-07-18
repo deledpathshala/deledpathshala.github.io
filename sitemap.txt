@@ -4,3 +4,6 @@ https://deledpathshala.github.io/semester-2.html
 https://deledpathshala.github.io/semester-3.html
 https://deledpathshala.github.io/semester-4.html
 https://deledpathshala.github.io/deled-notes.html
+https://deledpathshala.github.io/deled-series.html
+https://deledpathshala.github.io/ctet-notes.html
+https://deledpathshala.github.io/supertet-mock.html
