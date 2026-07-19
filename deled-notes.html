@@ -135,6 +135,9 @@
 
     let active = semesters.includes('sem1') ? 'sem1' : (semesters[0] || 'sem1');
 
+const hash = (location.hash || '').replace('#','').trim();
+if (hash && semesters.includes(hash)) active = hash;
+
     function renderTabs(){
       tabsEl.innerHTML = semesters.map(s => {
         const cls = s === active ? 'libTab libTab--active' : 'libTab';
@@ -145,6 +148,7 @@
         btn.addEventListener('click', ()=>{
           active = btn.getAttribute('data-sem');
           renderTabs(); renderList();
+          history.replaceState(null, '', '#' + active);
         });
       });
     }
