@@ -376,3 +376,40 @@ h1{margin:14px 0 10px; font-size:46px; line-height:1.08}
   .nav{display:none;}
   .menuBtn{display:inline-flex; align-items:center; justify-content:center;}
 }
+/* PDF Library */
+.libControls{ margin-top:14px; display:grid; gap:10px; }
+.libTabs{ display:flex; flex-wrap:wrap; gap:8px; }
+.libTab{
+  border:1px solid var(--border);
+  background:#fff;
+  color:var(--muted);
+  font-weight:900;
+  padding:9px 12px;
+  border-radius:999px;
+  cursor:pointer;
+}
+.libTab--active{
+  background: var(--primarySoft);
+  border-color: rgba(37,99,235,.22);
+  color:#123a9c;
+}
+.libSearch{
+  width:100%;
+  padding:12px 14px;
+  border-radius:14px;
+  border:1px solid var(--border);
+  background:#fff;
+  font-size:16px;
+}
+.libList{ margin-top:14px; display:grid; gap:10px; }
+.pdfItem{
+  display:flex; align-items:flex-start; justify-content:space-between; gap:12px;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius: var(--radius);
+  padding:12px 14px;
+  box-shadow: 0 10px 28px rgba(15,23,42,.05);
+}
+.pdfItem__title{ font-weight:950; line-height:1.35; }
+.pdfItem__meta{ color:var(--muted); margin-top:4px; font-size:13.5px; }
+.pdfItem__right{ display:flex; gap:10px; flex-wrap:wrap; }
