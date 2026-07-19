@@ -26,6 +26,20 @@
   <main class="page">
     <div class="wrap page__inner">
       <h1>DELED Notes PDF (D.El.Ed / BTC)</h1>
+      <div class="tipBox" style="margin-top:14px;">
+  <div class="tipBox__title">Notes Library (Semester-wise)</div>
+  <div class="tipBox__text">
+    Semester select karo aur search me keyword likho (जैसे: बाल विकास, विज्ञान, PYQ, कंप्यूटर).
+  </div>
+</div>
+
+<div class="libControls">
+  <div class="libTabs" id="libTabs"></div>
+  <input class="libSearch" id="libSearch" type="search"
+         placeholder="Search notes… (बाल विकास / विज्ञान / PYQ / कंप्यूटर)" />
+</div>
+
+<div id="libList" class="libList"></div>
 
       <p class="lead">
         Agar aap <b>DELED </b> (डीएलएड / D.El.Ed) ke liye <b>notes PDF</b>, <b>PYQ</b>, <b>quiz series</b>
@@ -157,5 +171,73 @@
   </main>
 
   <script src="./app.js"></script>
+  <script>
+(async function () {
+  const tabsEl = document.getElementById('libTabs');
+  const searchEl = document.getElementById('libSearch');
+  const listEl = document.getElementById('libList');
+
+  function safeDownloadName(s){
+    return (s || 'notes').replace(/[\\/:*?"<>|]/g,'').trim() + '.pdf';
+  }
+
+  let data = [];
+  try {
+    const res = await fetch('./pdf-index.json', { cache: 'no-store' });
+    data = await res.json();
+  } catch (e) {
+    listEl.innerHTML = '<div class="tipBox"><div class="tipBox__title">Loading failed</div><div class="tipBox__text">pdf-index.json nahi mil raha. File upload/commit check karo.</div></div>';
+    return;
+  }
+
+  const semesters = Array.from(new Set(data.map(x => x.semester)));
+  const order = ['sem1','sem2','sem3','sem4','unknown','other'];
+  semesters.sort((a,b) => order.indexOf(a) - order.indexOf(b));
+
+  const labels = { sem1:'Semester 1', sem2:'Semester 2', sem3:'Semester 3', sem4:'Semester 4', unknown:'Other', other:'Other' };
+  let active = semesters[0] || 'sem1';
+
+  function renderTabs(){
+    tabsEl.innerHTML = semesters.map(s => {
+      const cls = s === active ? 'libTab libTab--active' : 'libTab';
+      return `<button class="${cls}" data-sem="${s}">${labels[s] || s}</button>`;
+    }).join('');
+    tabsEl.querySelectorAll('button').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        active = btn.getAttribute('data-sem');
+        renderTabs(); renderList();
+      });
+    });
+  }
+
+  function renderList(){
+    const q = (searchEl.value || '').toLowerCase().trim();
+    const items = data.filter(x => x.semester === active)
+      .filter(x => !q || (x.title || '').toLowerCase().includes(q) || (x.type || '').toLowerCase().includes(q));
+
+    if (!items.length){
+      listEl.innerHTML = '<div class="tipBox"><div class="tipBox__title">No results</div><div class="tipBox__text">Search keyword change karke try karo.</div></div>';
+      return;
+    }
+
+    listEl.innerHTML = items.map(x => `
+      <div class="pdfItem">
+        <div class="pdfItem__left">
+          <div class="pdfItem__title">${x.title}</div>
+          <div class="pdfItem__meta">${x.type} • ${x.sizeMB} MB</div>
+        </div>
+        <div class="pdfItem__right">
+          <a class="btn btn--mini btn--soft" href="${x.url}" target="_blank" rel="noopener">Open</a>
+          <a class="btn btn--mini btn--primary" href="${x.url}" download="${safeDownloadName(x.title)}">Download</a>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  searchEl.addEventListener('input', renderList);
+  renderTabs();
+  renderList();
+})();
+</script>
 </body>
 </html>
