@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://deledpathshala.github.io/sitemap.xml
-Sitemap: https://deledpathshala.github.io/sitemap.txt
+Sitemap: https://deledpathshala.github.io/sitemap-index.xml
