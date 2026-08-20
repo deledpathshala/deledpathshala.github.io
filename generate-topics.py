@@ -12,7 +12,7 @@ SERIES_BODY = """
           </div>
         </div>
 
-        <h2 class="h2" style="margin-top:28px">How to participate (simple)</h2>
+        <h2 class="h2 mt28">How to participate (simple)</h2>
         <p class="subLead">Bas channel join karke group me participate karo — practice automatic routine ban jaati hai.</p>
 
         <div class="featureGrid" style="margin-top:16px">
@@ -22,7 +22,7 @@ SERIES_BODY = """
           <article class="feature" data-reveal><div class="feature__icon ico--green">4️⃣</div><h3>Step 4</h3><p>Consistency: 15–30 min daily practice se score fast improve hota hai.</p></article>
         </div>
 
-        <div class="tipBox" data-reveal style="margin-top:16px">
+        <div class="tipBox mt16" data-reveal>
           <div class="tipBox__title">🖼 Notes ki quality dekhni hai?</div>
           <div class="tipBox__text">Homepage par notes samples gallery available hai: <a href="./#preview"><b>Open Notes Preview →</b></a></div>
         </div>
@@ -43,7 +43,7 @@ CTET_BODY = """
           </div>
         </div>
 
-        <h2 class="h2" style="margin-top:28px">🔍 Quick tip (Telegram search)</h2>
+        <h2 class="h2 mt28">🔍 Quick tip (Telegram search)</h2>
         <p class="subLead">Telegram channel kholo kar search me ye type karo:</p>
         <div class="tipBox" data-reveal>
           <div class="tipBox__text"><b>ctet notes</b>, <b>ctet</b>, <b>pedagogy</b>, <b>quiz</b>, <b>mock</b></div>
@@ -65,7 +65,7 @@ SUPERTET_BODY = """
           </div>
         </div>
 
-        <h2 class="h2" style="margin-top:28px">🔍 Quick search (Telegram)</h2>
+        <h2 class="h2 mt28">🔍 Quick search (Telegram)</h2>
         <p class="subLead">Channel search me ye type karke relevant posts jaldi milenge:</p>
         <div class="tipBox" data-reveal>
           <div class="tipBox__text"><b>supertet</b>, <b>mock</b>, <b>quiz</b>, <b>practice set</b>, <b>revision</b></div>
@@ -135,6 +135,10 @@ SHELL = """<!DOCTYPE html>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Inter:wght@400;600;700;800;900&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./style.css" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 </head>
 
 <body>

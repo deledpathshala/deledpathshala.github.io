@@ -472,3 +472,11 @@ html.js [data-reveal].is-visible{opacity:1;transform:none}
   .heroFloat--tl{left:-6px;top:-10px}
   .heroFloat--br{right:-4px}
 }
+
+/* ---- Polish: hero grid safety + utilities + 404/redirect ---- */
+.hero__left,.hero__right{min-width:0}
+.mt16{margin-top:16px}
+.mt28{margin-top:28px}
+.pageHero--tall{padding-top:120px}
+.centerCol{display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px}
+.big404{font-family:var(--font-display);font-weight:900;font-size:clamp(72px,18vw,140px);line-height:1;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}

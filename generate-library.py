@@ -110,6 +110,7 @@ HEAD = """<!DOCTYPE html>
   <link href='https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Inter:wght@400;600;700;800;900&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap' rel='stylesheet' />
 
   <link rel='stylesheet' href='./style.css' />
+  <link rel='manifest' href='/site.webmanifest'>
   <link rel='apple-touch-icon' sizes='180x180' href='/apple-touch-icon.png'>
   <link rel='icon' type='image/png' sizes='32x32' href='/favicon-32x32.png'>
   <link rel='icon' type='image/png' sizes='16x16' href='/favicon-16x16.png'>
@@ -124,7 +125,7 @@ HEAD = """<!DOCTYPE html>
 
   <header class='topbar'>
     <div class='wrap topbar__inner'>
-      <a class='brand' href='../'>
+      <a class='brand' href='./'>
         <span class='brand__mark' aria-hidden='true'>
           <svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M2 4h6a4 4 0 0 1 4 4v13'/><path d='M22 4h-6a4 4 0 0 0-4 4v13'/><path d='M12 3v18'/></svg>
         </span>
@@ -132,7 +133,7 @@ HEAD = """<!DOCTYPE html>
       </a>
 
       <nav class='nav'>
-        <a href='../'>Home</a>
+        <a href='./'>Home</a>
         <a href='./deled-notes-pdf.html' class='is-active'>Notes PDF</a>
         <a href='./deled-series.html'>Series</a>
         <a href='./ctet-notes.html'>CTET</a>
@@ -152,7 +153,7 @@ HEAD = """<!DOCTYPE html>
 
   <div class='mobileMenu' id='mobileMenu' hidden>
     <div class='mobileMenu__inner wrap'>
-      <a href='../'>🏠 Home</a>
+      <a href='./'>🏠 Home</a>
       <a href='./deled-notes-pdf.html'>📚 Notes PDF Library</a>
       <a href='./deled-series.html'>🎯 DELED Series</a>
       <a href='./ctet-notes.html'>📝 CTET Notes</a>
@@ -220,7 +221,7 @@ HEAD = """<!DOCTYPE html>
     <div class='wrap'>
       <div class='footer__top'>
         <div>
-          <a class='brand' href='../'><span class='brand__mark' aria-hidden='true'><svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M2 4h6a4 4 0 0 1 4 4v13'/><path d='M22 4h-6a4 4 0 0 0-4 4v13'/><path d='M12 3v18'/></svg></span> DELED Pathshala</a>
+          <a class='brand' href='./'><span class='brand__mark' aria-hidden='true'><svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M2 4h6a4 4 0 0 1 4 4v13'/><path d='M22 4h-6a4 4 0 0 0-4 4v13'/><path d='M12 3v18'/></svg></span> DELED Pathshala</a>
           <p class='footer__desc'>UP DELED (BTC) notes PDFs, PYQ, quiz series और teaching exams की तैयारी — एक ही जगह विश्वसनीय सामग्री।</p>
         </div>
         <div>
