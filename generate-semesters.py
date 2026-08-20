@@ -1,16 +1,61 @@
-<!DOCTYPE html>
+#!/usr/bin/env python3
+"""Generates semester-1..4.html landing pages."""
+import json
+
+PAGES = [
+    {
+        "file": "semester-1.html",
+        "sem": "1",
+        "title": "UP DELED Semester 1 Notes PDF (Hindi Medium) | DELED Pathshala",
+        "desc": "UP D.El.Ed (BTC) Semester 1 notes PDFs (Hindi medium), PYQ & practice. बाल विकास, समकालीन-भारतीय-समाज-1, शिक्षा-प्रक्रिया, SST, गणित एवं निर्माण ज्ञान, कंप्यूटर साक्षरता के notes. Join Telegram for daily updates + quizzes.",
+        "h1": "Semester 1",
+        "lead": "Semester 1 के notes PDFs / PYQ / handwritten printouts — organised ढंग से एक जगह।",
+        "topics": "बाल विकास, समकालीन-भारतीय-समाज-1, शिक्षा-प्रक्रिया, ज्ञान-सिद्धांत-एवं-अधिगम (SST), गणित एवं निर्माण ज्ञान, कंप्यूटर साक्षरता… (PDFs + notes + PYQ)",
+    },
+    {
+        "file": "semester-2.html",
+        "sem": "2",
+        "title": "UP DELED Semester 2 Notes PDF (Hindi Medium) | DELED Pathshala",
+        "desc": "UP D.El.Ed (BTC) Semester 2 notes PDFs, notes+PYQ packs & practice. English, समकालीन भारतीय समाज-2 बुनियादी समझ, गणित शिक्षण, सामाजिक विज्ञान शिक्षण सहित सभी विषयों के notes. Join Telegram for daily updates + quizzes.",
+        "h1": "Semester 2",
+        "lead": "Semester 2 के notes PDFs / notes+PYQ packs / practice material — सब organized ढंग से एक जगह।",
+        "topics": "English notes/PYQ packs, “समकालीन भारतीय समाज-2 बुनियादी समझ” — सामाजिक समझ, गणित शिक्षण-2, सामाजिक विज्ञान शिक्षण से जुड़े हुए papers के notes और PYQ",
+    },
+    {
+        "file": "semester-3.html",
+        "sem": "3",
+        "title": "UP DELED Semester 3 Notes PDF (Hindi Medium) | DELED Pathshala",
+        "desc": "UP D.El.Ed (BTC) Semester 3 notes PDFs (Hindi medium), PYQ, assignment & inclusive education notes. आजीवन शिक्षा-दर्शन, सीखने-सिखाने की प्रक्रिया से जुड़े हुए subject-wise notes. Join Telegram for daily updates + quizzes.",
+        "h1": "Semester 3",
+        "lead": "Semester 3 के notes PDFs + PYQ + practice material — directly download कर सकते हो।",
+        "topics": "आजीवन शिक्षा-दर्शन, सीखने-सिखाने की प्रक्रिया (Assessment), विषयवार नोट्स (PDF/handwritten)",
+    },
+    {
+        "file": "semester-4.html",
+        "sem": "4",
+        "title": "UP DELED Semester 4 Notes PDF (Hindi Medium) | DELED Pathshala",
+        "desc": "UP D.El.Ed (BTC) Semester 4 revision notes PDFs (Hindi medium), important questions, notes+PYQ packs. कम समय में complete करें पूरे syllabus को — विषयवार महत्वपूर्ण topics + revision notes. Join Telegram for daily updates + quizzes.",
+        "h1": "Semester 4",
+        "lead": "Final semester की तैयारी — revision notes PDFs + important questions + practice material।",
+        "topics": "कम समय में complete करें पूरा syllabus (Sem 4), विषयवार महत्वपूर्ण प्रश्न (Important Qs), भाषा (हिंदी/उर्दू) से जुड़े हुए topics + revision notes",
+    },
+]
+
+
+def page(p):
+    return f"""<!DOCTYPE html>
 <html lang="hi">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#5a3df0" />
-  <title>UP DELED Semester 4 Notes PDF (Hindi Medium) | DELED Pathshala</title>
-  <meta name="description" content="UP D.El.Ed (BTC) Semester 4 revision notes PDFs (Hindi medium), important questions, notes+PYQ packs. कम समय में complete करें पूरे syllabus को — विषयवार महत्वपूर्ण topics + revision notes. Join Telegram for daily updates + quizzes." />
-  <link rel="canonical" href="https://deledpathshala.github.io/semester-4.html" />
+  <title>{p['title']}</title>
+  <meta name="description" content="{p['desc']}" />
+  <link rel="canonical" href="https://deledpathshala.github.io/{p['file']}" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="UP DELED Semester 4 Notes PDF | DELED Pathshala" />
-  <meta property="og:description" content="UP D.El.Ed (BTC) Semester 4 revision notes PDFs (Hindi medium), important questions, notes+PYQ packs. कम समय में complete करें पूरे syllabus को — विषयवार महत्वपूर्ण topics + revision notes. Join Telegram for daily updates + quizzes." />
-  <meta property="og:url" content="https://deledpathshala.github.io/semester-4.html" />
+  <meta property="og:title" content="UP DELED Semester {p['sem']} Notes PDF | DELED Pathshala" />
+  <meta property="og:description" content="{p['desc']}" />
+  <meta property="og:url" content="https://deledpathshala.github.io/{p['file']}" />
   <meta property="og:site_name" content="DELED Pathshala" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -62,11 +107,11 @@
   <main>
     <section class="pageHero">
       <div class="wrap">
-        <span class="kicker">✦ Semester 4</span>
-        <h1>UP DELED (BTC) <span class="grad-text">Semester 4</span> Notes PDF</h1>
-        <p class="lead">Final semester की तैयारी — revision notes PDFs + important questions + practice material।</p>
+        <span class="kicker">✦ Semester {p['sem']}</span>
+        <h1>UP DELED (BTC) <span class="grad-text">Semester {p['sem']}</span> Notes PDF</h1>
+        <p class="lead">{p['lead']}</p>
         <div class="ctaRow">
-          <a class="btn btn--primary btn--lg" href="./deled-notes-pdf.html#sem4">Open Semester 4 PDFs</a>
+          <a class="btn btn--primary btn--lg" href="./deled-notes-pdf.html#sem{p['sem']}">Open Semester {p['sem']} PDFs</a>
           <a class="btn btn--soft" href="https://t.me/Deled_Pathshala" target="_blank" rel="noopener">Telegram Updates</a>
           <a class="btn btn--soft" href="https://t.me/deled_pathshala_discussion" target="_blank" rel="noopener">Doubts Group</a>
         </div>
@@ -76,8 +121,8 @@
     <section class="page">
       <div class="wrap page__inner">
         <div class="tipBox" data-reveal>
-          <div class="tipBox__title">📚 Semester 4 में क्या-क्या पढ़ना है?</div>
-          <div class="tipBox__text">कम समय में complete करें पूरा syllabus (Sem 4), विषयवार महत्वपूर्ण प्रश्न (Important Qs), भाषा (हिंदी/उर्दू) से जुड़े हुए topics + revision notes</div>
+          <div class="tipBox__title">📚 Semester {p['sem']} में क्या-क्या पढ़ना है?</div>
+          <div class="tipBox__text">{p['topics']}</div>
         </div>
         <div class="tipBox" data-reveal>
           <div class="tipBox__title">🖼 Notes Preview</div>
@@ -88,7 +133,7 @@
           <div class="tipBox__text">Daily quizzes / practice sets Telegram पर: <a href="https://t.me/Deled_Pathshala" target="_blank" rel="noopener"><b>Join Channel →</b></a></div>
         </div>
         <div class="ctaRow" data-reveal>
-          <a class="btn btn--primary" href="./deled-notes-pdf.html#sem4">📥 Download Semester 4 PDFs</a>
+          <a class="btn btn--primary" href="./deled-notes-pdf.html#sem{p['sem']}">📥 Download Semester {p['sem']} PDFs</a>
           <a class="btn btn--ghost" href="./deled-notes-pdf.html">📚 Full Library</a>
         </div>
       </div>
@@ -139,3 +184,10 @@
   <script src="./app.js"></script>
 </body>
 </html>
+"""
+
+
+if __name__ == "__main__":
+    for p in PAGES:
+        open(p["file"], "w", encoding="utf-8").write(page(p))
+        print("wrote", p["file"])
