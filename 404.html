@@ -1,18 +1,76 @@
 <!doctype html>
-<html lang="en">
+<html lang="hi">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>404 — DELED Pathshala</title>
-  <link rel="stylesheet" href="./style.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#4f46e5">
+  <title>404 — Page Not Found | DELED Pathshala</title>
+  <meta name="description" content="The requested page could not be found. Return to DELED Pathshala or browse the PDF library.">
+  <link rel="canonical" href="https://deledpathshala.github.io/404.html">
+  <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+  <link rel="manifest" href="./site.webmanifest">
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  <main class="page">
-    <div class="wrap page__inner">
-      <h1>Page not found</h1>
-      <p class="lead">Go back to homepage.</p>
-      <a class="btn btn--primary" href="./">Home</a>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="topbar">
+    <div class="wrap topbar__inner">
+      <a class="brand" href="./" aria-label="DELED Pathshala home">
+        <span class="brand__mark">DP</span>
+        <span class="brand__copy"><strong>DELED Pathshala</strong><small>सीखो • बढ़ो • सिखाओ</small></span>
+      </a>
+      <nav class="nav" id="siteNav" aria-label="Main navigation">
+        <a href="./">Home</a>
+        <a href="./deled-notes-pdf.html">PDF Library</a>
+        <a href="./#semesters">Semesters</a>
+        <a href="./deled-series.html">Quiz Series</a>
+        <a href="./ctet-notes.html">CTET</a>
+        <a class="nav__mobile-cta" href="https://t.me/Deled_Pathshala" target="_blank" rel="noopener">Join Telegram</a>
+      </nav>
+      <div class="header-actions">
+        <a class="btn btn--primary btn--mini desktop-cta" href="https://t.me/Deled_Pathshala" target="_blank" rel="noopener">Join Telegram <span aria-hidden="true">↗</span></a>
+        <button class="menuBtn" id="menuBtn" type="button" aria-expanded="false" aria-controls="siteNav" aria-label="Open navigation"><span></span></button>
+      </div>
     </div>
-  </main>
+  </header>
+  <main id="main" class="not-found"><div><div class="not-found__code">404</div><h1>यह page नहीं मिला</h1><p>शायद link बदल गया है या page मौजूद नहीं है. चिंता मत कीजिए — आपकी पढ़ाई का रास्ता अभी भी यहीं है.</p><div class="centerRow" style="justify-content:center"><a class="btn btn--primary" href="./">Back to Home</a><a class="btn btn--soft" href="./deled-notes-pdf.html">Open PDF Library</a></div></div></main>
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__top">
+        <div class="footer__brand-col">
+          <a class="brand" href="./">
+            <span class="brand__mark">DP</span>
+            <span class="brand__copy"><strong>DELED Pathshala</strong><small>सीखो • बढ़ो • सिखाओ</small></span>
+          </a>
+          <p class="footer__about">UP D.El.Ed (BTC) students ke liye organised notes, PYQs aur exam-focused practice — bilkul free, ek hi jagah.</p>
+        </div>
+        <div>
+          <h3>Explore</h3>
+          <div class="footer__links">
+            <a href="./">Home</a><a href="./deled-notes-pdf.html">PDF Library</a><a href="./#semesters">All Semesters</a><a href="./#preview">Notes Preview</a>
+          </div>
+        </div>
+        <div>
+          <h3>Preparation</h3>
+          <div class="footer__links">
+            <a href="./deled-series.html">DELED Quiz Series</a><a href="./ctet-notes.html">CTET Notes</a><a href="./supertet-mock.html">SuperTET Practice</a><a href="./deled-notes-pdf.html#unknown">Other Resources</a>
+          </div>
+        </div>
+        <div class="footer__community">
+          <h3>Community</h3>
+          <div class="footer__links">
+            <a href="https://t.me/Deled_Pathshala" target="_blank" rel="noopener">Telegram Channel ↗</a><a href="https://t.me/deled_pathshala_discussion" target="_blank" rel="noopener">Discussion Group ↗</a><a href="https://www.youtube.com/@Deled_Pathshala" target="_blank" rel="noopener">YouTube Classes ↗</a><a href="https://t.me/s/Deled_Pathshala" target="_blank" rel="noopener">Latest Posts ↗</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© <span data-year>2026</span> DELED Pathshala. Free learning resources.</span>
+        <span class="footer__love">Made with <span>♥</span> for future teachers</span>
+      </div>
+    </div>
+  </footer>
+  <script src="./app.js"></script>
 </body>
 </html>
